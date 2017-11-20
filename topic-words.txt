@@ -1,0 +1,179 @@
+# -----------------------------------------------------------------------------
+
+heather: heather heathery
+
+honey: honey honeyed honeysuckle baklava
+
+floral: floral flower flowers flowery blossom fragrant aromatic
+perfumed perfume lavender petals rose roses rosewater
+
+citrus: orange oranges orangey mandarins marmalade tangerine lemon
+lemonade lemons lemony lime limes limey citric citrus citrusy peel
+zest zesty
+
+tropical: melon melons mango papaya tropical aloe cucumber coconut
+kiwi honeydew pineapple watermelon
+
+banana: banana bananas esters estery
+
+apple: apple apples pear pears manzanilla cider crisp
+
+stonefruit: apricot apricots nectar nectarine nectarines peach peaches
+peachy plum plums
+
+fruit: fruit fruitcake fruitier fruitiness fruits fruity
+
+berry: berries berry blackberries blackberry blueberries blueberry
+raspberries raspberry strawberries strawberry cherries cherry currant
+currants gooseberries jam jelly juice juicy pomegranate rhubarb
+cranberries cranberry pie
+
+raisin: grape grapes grapey sultanas sultana raisin raisins date dates
+fig figgy figs prune prunes
+
+wine: madeira port portwood porty wine wines winey marsala burgundy
+brandy cognac
+
+sherry: sherried sherry
+
+# -----------------------------------------------------------------------------
+
+hay: hay grass grassiness grassy straw
+
+beer: malt malty maltier maltiest barley beer wheat wheated sourdough
+bread bready cracker crackers hops oatmeal pastry popcorn porridge
+toast toasted cereal
+
+bakery: graham shortbread cookie cookies cake muffin biscuit biscuits
+baked bakery
+
+nutty: almond almonds nut nuts nuttiness nutty peanut peanuts walnut
+walnuts cashew cashews pecans seeds
+
+cocoa: cocoa chocolate chocolatey hazelnut hazelnuts mocha fudge
+
+coffee: coffee espresso tea
+
+# -----------------------------------------------------------------------------
+
+chemical: resin tar phenolic ethanol chemical chemicals varnish
+synthetic plastic polish naphthalene gunpowder acetone solventy tires
+rubber rubbery glue
+
+harsh: harsh harsher harshness hot immature prickling prickly tequilas
+teeth young younger rough sharp
+
+# -----------------------------------------------------------------------------
+
+sea: marine maritime fish kelp seashells sea seashore seawater seaweed
+ocean oceany salmon
+
+salt: salt salted saltiness saltwater salty salinity brine briney
+briny
+
+mineral: mineral minerality stone stones flint flinty gravel
+
+peat: peat peated peatiness peaty matches sulfur sulphur sulphury bog
+boggy
+
+dirty: cumin earth earthier earthiness earthy mushroom mushrooms
+mushroomy musk musky musty manure damp funk funky garlic moss mossy
+onion onions dirt dirty rotten rotting wet wool yeasty
+
+smoke: pipe pipes bonfire incense scorched burn burned burning burns
+burnt campfire charred charcoal cigar cigarettes cigars coal embers
+fire fires smoke smoked smokey smokier smokiness smoky smoldering
+smouldering acrid soot sooty tobacco ash ashy barbecue barbeque bbq
+grill grilled mesquite roast roasted
+
+steeped: steeped stewed cooked boiled
+
+meat: beef chicken pork meat meatiness meats meaty ham molasses maple
+steak bacon ribs prosciutto salami umami
+
+savory: savor savory savoury
+
+oil: oiled oiliness oils oily
+
+wax: wax waxy
+
+leather: leather leathery
+
+# -----------------------------------------------------------------------------
+
+spice: christmas spice spiced spices spicier spiciest spiciness spicy
+cardamom cardamon ginger gingerbread gingery allspice cinnamon clove
+cloves nutmeg mace strudel carrot carrots cola
+
+pepper: pepper peppercorns peppered peppers peppery mexican chili
+chilis chilli chipotle paprika jalapeno cayenne
+
+camphor: camphor mint minty eucalyptus anise aniseed fennel fresh
+menthol liquorice licorice peppermint spearmint
+
+herbal: herbal herbs coriander basil celery oregano parsley rosemary
+sage salad thyme vegetal green leafy leaves tomato
+
+
+# -----------------------------------------------------------------------------
+
+sugar: sugar sugared sugary sweet sweetened sweetens sweeter sweetest
+sweetness sweets syrup syrupy
+
+cloying: candied candies candy cloying cloyingly
+
+caramel: caramel caramelised caramels butterscotch
+
+toffee: toffee
+
+vanilla: vanilla
+
+cream: milk milky cream creamier creaminess creamy creme brulee
+cheesecake frosting marshmallow marzipan custard
+
+butter: butter buttered buttery
+
+oak: oak oaked oakiness oaky chardonnay
+
+# -----------------------------------------------------------------------------
+
+weak: watery weak sheer bland boring
+
+easy: clean easygoing light medium mellow mild pleasant subdued tame
+simple relaxing refreshing gentle approachable
+
+bold: aggressive attack beast bite biting explosion explosive enormous
+bomb bold heavier heavy intense monster massive powerful potent
+strength strong robust
+
+rich: rich richer richness complex complexity
+
+classy: classic classy elegant
+
+smooth: silky smooth smoother soft softer
+
+# -----------------------------------------------------------------------------
+
+wood: driftwood wood woodiness woods woodspice woody mahogany bark
+cedar pine sandalwood sap pith
+
+tannin: astringency astringent tannic tannins dry drying dryness dying
+
+# -----------------------------------------------------------------------------
+
+chewy: chewy thick thicker viscosity viscous
+
+warm: warm warming warms warmth
+
+acid: acid acidic acidity vinegar vinegary sour sourness tart tartness
+tarts tang tangy pickled
+
+medicinal: bandages hospital medicinal medicine iodine
+
+bitter: grapefruit bitter bitterness bitters
+
+unpeated: unpeated
+
+matured: matured
+
+metallic: metal metallic copper
