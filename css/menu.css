@@ -1,0 +1,137 @@
+/* sidebar menu is a vertical stack of uls */
+#menu {
+  bottom: 0;
+  left: 0;
+  top: 0;
+  position: fixed;
+  margin: 0;
+  /* total width is 10em */
+  width: 8em;
+  padding: 3em 1em;
+  background: #eee8d5;
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+}
+
+#menu .head {
+  border-style: none;
+  height: 3ex;
+  margin: 1ex 0 0;
+  padding: 1ex 0 0;
+}
+
+#menu .head:first-child {
+  margin-top: 0;
+}
+
+
+/* mobile... */
+/* ... ipad */
+/* shrink the width of the menu a little */
+@media screen and (max-device-width: 768px){
+  #menu {
+    width: 6em;
+  }
+}
+
+/* ... iphone */
+/* sidebar menu is a horizontal layout in a fixed position at the top
+   of the page */
+@media screen and (max-device-width: 480px){
+  #menu {
+    width:auto;
+    left: 0;
+    top: 0;
+    bottom: auto;
+    position: absolute;
+    background-color: #eee8d5;
+    padding:1em;
+  }
+
+  #menu ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+
+  #menu li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  #menu li:not(:first-of-type) {
+    margin-left: 10px;
+  }
+
+  #menu .head {
+    display:none;
+  }
+
+  #menu .head:first-child {
+    display:none;
+  }
+
+  #menu ul.keep-mobile {
+    display:block;
+  }
+}
+
+
+
+/* add stubs to h2 which match the menu color */
+h2 {
+  border-color: #eee8d5;
+  border-style: none none none solid;
+  border-width: 1.75em;
+  /* extends 1em into the sidebar */
+  margin: 3ex 0 1ex -3em;
+  padding: 0 0 0 0.5em;
+  width: 70%;
+}
+
+/* leave room left of body for the menu */
+/* sidebar is 11em wide */
+body {
+  margin-left: 13em;
+  margin-right: auto;
+}
+
+/* mobile... */
+/* ... ipad */
+/* decrease the margin a little */
+@media screen and (max-device-width: 768px){
+  body {
+    margin-left: 10em;
+    margin-right: 1em;
+  }
+}
+
+/* ... iphone */
+/* no margin around the body */
+@media screen and (max-device-width: 480px){
+  body {
+    margin-left: 1em;
+    margin-right: auto;
+  }
+
+  h2 {
+    border-style: none;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    width: 100%;
+  }
+}

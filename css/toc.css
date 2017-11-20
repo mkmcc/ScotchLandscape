@@ -1,0 +1,53 @@
+#table-of-contents {
+  padding: 1.0em;
+  margin: 0;
+  display: block;
+  width: 15em;
+
+  position:fixed;
+  top:2.5em;
+  right:2.5em;
+
+  font-size: 80%;
+  line-height: 150%;
+  font-family: 'Patua One', sans-serif;
+  background-color: #eee8d5;
+}
+
+#table-of-contents ul li {
+  font-size: 90%;
+  font-weight: normal;
+  list-style-position: outside;
+}
+
+#table-of-contents ul {
+  padding:0;
+  margin-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom:0;
+}
+
+#table-of-contents h2 {
+  font-weight: bold;
+  font-size: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0.5ex 0 0.5ex 0;
+  border-width: 0;
+  width: 100%;
+}
+
+/* mobile... */
+/* ... ipad */
+@media screen and (max-device-width: 768px){
+  #table-of-contents {
+    display:none;
+  }
+}
+
+/* ... iphone */
+@media screen and (max-device-width: 480px){
+  #table-of-contents {
+    display:none;
+  }
+}

@@ -1,0 +1,34 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+  padding: 0em 0.5em 0em 0.5em;
+  vertical-align: middle;
+  position: relative;
+}
+
+th {
+  font-weight: bold;
+}
+
+.contact td {
+  padding: 0em 0.5em 0em 0.25em;
+}
+
+tr.strikeout td:before {
+    content: " ";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    border-bottom: 1px dashed #111;
+    width: 100%;
+}
+
+td.raligned {text-align: right;}
+td.laligned {text-align: left;}
+td.caligned {text-align: center;}
+
+th.raligned {text-align: right;}
+th.laligned {text-align: left;}
+th.caligned {text-align: center;}

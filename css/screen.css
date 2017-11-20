@@ -1,0 +1,209 @@
+@import "normalize.css";
+@import "tables.css";
+/* @import "menu.css"; */
+/* @import "toc.css"; */
+@import "images.css";
+
+/* google web fonts */
+@import url(//fonts.googleapis.com/css?family=Inconsolata);
+@import url(//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic);
+@import url(//fonts.googleapis.com/css?family=Patua+One);
+@import url(//fonts.googleapis.com/css?family=Pompiere);
+
+
+/* text */
+body {
+  /* use px rather than em so I know what image size to use */
+  width:900px;
+  /* max-width: 35em; */
+  font-size: 12pt;
+  line-height: 18pt;
+  font-family: 'Gentium Basic', serif;
+  background-color: #fdf6e3;
+  color: #657b83;
+  padding: 2.5em;
+}
+
+/* mobile... */
+/* ... ipad */
+@media screen and (max-device-width: 768px){
+  body {
+    width:auto;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+/* ... iphone */
+@media screen and (max-device-width: 480px){
+  body {
+    width:90%;
+    font-size: 14pt;
+    line-height: 18pt;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+a, a:link {
+  color: #268bd2;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  border-bottom-color: #6c71c4;
+  color: #6c71c4;
+}
+
+p {
+  margin: 0.75em 0 0.75em 0;
+  /* this seems to be needed for Chrome's iphone emulation... */
+  /* should have no effect */
+  max-height: 100000000em;
+}
+
+ol > li {
+  list-style-type: decimal;
+  padding-left: 0em;
+}
+
+
+/* block quote */
+blockquote {
+  padding: 0.5em 10px;
+  margin: 1.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p.firstquote {
+  display: inline;
+}
+
+blockquote p {
+  font-size: 90%;
+  font-style: italic;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite a {
+  color: #999999;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
+}
+
+
+/* pre boxes */
+pre {
+  padding: 1.0em;
+  margin: 1.5ex 0 1.5ex 0;
+  font-family: 'Inconsolata', monospace;
+}
+
+code {
+  font-family: 'Inconsolata', monospace;
+}
+
+pre.example {
+  border-left: 4px solid #859900;
+  background: #eee8d5;
+}
+
+pre.src {
+  border-left: 4px solid #657b83;
+}
+
+
+/* headings */
+h1, h2, h3, h4, h5 {
+  font-family: 'Patua One', sans-serif;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 120%;
+  margin: 2.5ex 0 0.5ex 0em;
+  color: #859900;
+  font-weight: bold;
+}
+
+h4 {
+  color: #d33682;
+  font-weight: bold;
+}
+
+*.title {
+  font-size: 300%;
+  line-height: 105%;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  color: #b58900;
+  font-family: 'Pompiere';
+}
+
+/* mobile... */
+/* ... iphone */
+@media screen and (max-device-width: 480px){
+  *.title {
+    margin:0;
+    padding-top: 2em;
+  }
+
+  h3 {
+      margin: 2.5ex 0 0.5ex 0em;
+  }
+
+}
+
+
+/* postamble */
+div#postamble {
+  margin: 20pt 0 20pt 0;
+  font-size: 8pt;
+  text-align: right;
+  line-height: 120%;
+  font-family: sans-serif;
+}
+
+div#postamble-extra {
+  font-size: 8pt;
+}
+
+p.validation {
+  padding: 10pt 0 0 0;
+}
+
+/* mobile... */
+/* ... iphone */
+@media screen and (max-device-width: 480px){
+  p.validation {
+    display:none;
+  }
+}
+
+#postamble p {
+  margin: 0;
+}
