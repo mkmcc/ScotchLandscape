@@ -31,25 +31,33 @@
 
 <h1 class="title">Scotch Landscape</h1>
   
+  <p>
+  (If you&rsquo;d rather just skip to the result, you can
+  go <a href="./scotch-plot.html">here</a>.  Alternatively, if
+  you&rsquo;re super-interested and would like to see my source code,
+  you can find on github
+  it <a href="https://github.com/mkmcc/ScotchLandscape">here</a>.)
+  </p>
+
 <div class="section" id="section1">
   <h2>Introduction</h2>
 
   <p>
-  (If you&rsquo;d rather just skip to the result, you can
-  go <a href="./scotch-plot.html">here</a>.)
+  If you&rsquo;ve ever met a craft beer enthusiast, you probably know
+  that beer can be <i>very complicated</i>: there are different malts,
+  hops, and styles to choose from, and there are also strong opinions
+  to accompany each choice&hellip; it can take a bit of experimenting
+  to learn your preferences.  (Not that anyone is complaining!)
   </p>
 
   <p>
-  If you&rsquo;ve ever met a craft beer enthusiast, you probably know
-  that beer can be <i>very complicated</i>: there are different malts,
-  hops, and styles, and there are also strong opinions to accompany
-  each of them.  Scotch whisky is essentially distilled beer, and
-  distillation only adds to the layers of complexity: connoisseurs
-  describe scotches with a language every bit as thorough and every
-  bit as indeciperable as the language used to describe red wines.
-  This makes it a bit of a challenge to break into the scotch world
-  and to learn what you like &mdash; especially since a bottle of
-  scotch lasts a long time and mistakes can be expensive!
+  Scotch whisky is essentially distilled beer, and distillation only
+  adds to the layers of complexity: connoisseurs describe scotches
+  with a language every bit as thorough and every bit as inscrutable
+  as the language used to describe red wines.  This makes it a bit of
+  a challenge to break into the scotch world and to learn what you
+  like &mdash; especially since a bottle of scotch lasts a long time
+  and mistakes can be expensive!
   </p>
 
   <p>
@@ -104,7 +112,7 @@
   </tr>
 
   <tr valign="top">
-    <th>&hellip;</th>
+    <th align="left">&hellip;</th>
     <td></td>
   </tr>
   </table>
@@ -114,16 +122,19 @@
   For each scotch, this tally represents a sort of
   &ldquo;fingerprint&rdquo; for the traits defining that scotch.  We
   can run a few machine-learning algorithms on these fingerprints and
-  see what patterns my laptop is able to find in all these reviews:
+  see what patterns we can tease out from all these reviews:
   </p>
 
   <h3>KMeans Cluster Analysis:</h3>
 
   <p>
-  After tallying each of these traits for each scotch, I can use a
-  KMeans analysis to look for clusters &mdash; each cluster should
-  contain a number of scotches with similar traits.  I&rsquo;ll try
-  looking for <i>nine</i> distinct clusters:
+  After tallying each of these traits for each scotch, the simplest
+  thing I can do is to run a KMeans analysis to look for clusters
+  &mdash; each cluster should contain a number of scotches with
+  similar traits.  The KMeans algorithm won&rsquo;t actually identify
+  the <i>number</i> of clusters&hellip; that&rsquo;s a bit arbitrary,
+  and must be specified by hand.  I&rsquo;ll try looking for (say)
+  nine distinct clusters:
   </p>
 
   <p>
@@ -141,10 +152,12 @@
   </p>
 
   <p>
-  Unfortunately, this isn&rsquo;t especially illuminating, at least
-  not to me.  So I&rsquo;ll try to get the computer to do more of the
-  interpretation for me&hellip; we can do this using a <i>principal
-  component analysis</i>.
+  You might use this to, e.g., take a scotch you know you like, and
+  then find other scotches from the same group.  Unfortunately, the
+  meaning of these groups isn&rsquo;t especially illuminating, at
+  least not to me.  So I&rsquo;ll try to get the computer to do more
+  of the interpretation for me&hellip; a good choice for this scenario
+  is the <i>principal component analysis</i>.
   </p>
 
 </div> <!-- end section 1 -->
@@ -154,7 +167,7 @@
   <h2>Principal Component Analysis</h2>
 
   <p>
-  Next, I'll use a principal component analysis to identify the most
+  The principal component analysis attempts to identify the most
   salient qualities separating the different types of scotches.
   </p>
 
@@ -162,10 +175,11 @@
   Here is a scatter plot showing the various principal components for
   each scotch, colored by the region of origin.  You can see that the
   principal components 1 and 2 separate the regions quite well, with
-  the smoky Islay scotches in one bunch and the ligher Speyside
-  scotches all on the other side.  In terms of <i>interpretation</i>,
-  neither PC1 or PC2 seem likely to be helpful, but a line cutting
-  across the diagonal of this plot seems promising!
+  the smoky Islay scotches in one bunch toward the lower-left and the
+  lighter Speyside scotches all on the other side.  In terms
+  of <i>interpretation</i>, neither PC1 or PC2 seem likely to be
+  all-that helpful, but a line cutting across the diagonal of this
+  plot seems promising!
   </p>
 
   <p>
@@ -329,10 +343,28 @@
   So there you have it.  This analysis is not mathematically rigorous,
   and it relies on a few subjective guesses.  Unfortunately, I&rsquo;m
   a total scotch-novice and cannot guarantee my guesses are accurate.
-  However, I do think the results stand to reason&hellip; I hope you
-  find them helpful, and please let me know if you think I&rsquo;ve
-  erred!
+  However, I do think the results stand to reason&hellip; for example,
+  the <i>Balvenie 12 Doublewood</i>, which is unpeated and aged in
+  both American and French oak, appears roughly halway up the right
+  side of the plot.  And the <i>Laphroaig 10</i>, which is heavily
+  peated and aged only in American oak, appears in the lower-left
+  corner.
   </p>
+
+  <p>
+  I hope you find these results helpful, and please let me know if you
+  think I&rsquo;ve erred!
+  </p>
+
+  <!--
+  <p>
+  Assuming my conclusion that scotches are primarily divided between
+  French vs. American oak and between peated vs unpeated, one could
+  presumably redo this analysis with a set of more targeted traits.
+  This should yield a more accurate result, but of course
+  there&rsquo;s the danger of getting out the answer you put in!
+  </p>
+  -->
 
 </div> <!-- end section 3 -->
 
