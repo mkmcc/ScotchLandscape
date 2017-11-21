@@ -34,8 +34,8 @@
   <p>
   (If you&rsquo;d rather just skip to the result, you can
   go <a href="./scotch-plot.html">here</a>.  Alternatively, if
-  you&rsquo;re super-interested and would like to see my source code,
-  you can find on github
+  you&rsquo;re super-interested in this analysis and would like to see
+  my source code, you can find on github
   it <a href="https://github.com/mkmcc/ScotchLandscape">here</a>.)
   </p>
 
@@ -47,31 +47,38 @@
   that beer can be <i>very complicated</i>: there are different malts,
   hops, and styles to choose from, and there are also strong opinions
   to accompany each choice&hellip; it can take a bit of experimenting
-  to learn your preferences.  (Not that anyone is complaining!)
+  to learn your preferences.
   </p>
 
   <p>
-  Scotch whisky is essentially distilled beer, and distillation only
-  adds to the layers of complexity: connoisseurs describe scotches
-  with a language every bit as thorough and every bit as inscrutable
-  as the language used to describe red wines.  This makes it a bit of
-  a challenge to break into the scotch world and to learn what you
-  like &mdash; especially since a bottle of scotch lasts a long time
-  and mistakes can be expensive!
+  Scotch whisky is essentially distilled beer, and distillation adds
+  layers to this complexity: connoisseurs describe scotches with a
+  language every bit as extensive (and every bit as inscrutable) as
+  the language used to describe red wines.  This makes it a bit of a
+  challenge to break into the scotch world and to learn what you like
+  &mdash; especially since a bottle of scotch lasts a long time and
+  mistakes can be expensive!
   </p>
 
   <p>
-  I&rsquo;ve attempted to help by downloading scotch reviews from the 
+  Exploring a large parameter space like this one is a good
+  application for machine learning&hellip; I can have my laptop crunch
+  through thousands of scotch reviews and find any dominant patterns
+  in the tasting notes.  I&rsquo;ll take scotch reviews from the
+  (impressively active)
   <a href="https://www.reddit.com/r/Scotch/">Scotch SubReddit</a> and
-  distilling the information into something you can use to explore and
-  compare scotches at a glance.
+  attempt to distill this information into something you can use to
+  explore and compare scotches at a glance.
   </p>
 
   <p>
   I took the 200 most reviewed scotches, and for each of them
   downloaded ten reviews from Reddit&rsquo;s most prolific reviewers.
-  Then, for each scotch I count up the number of words in different
-  note categories like the following:
+  (I use a reviewer&rsquo;s productivity as a proxy for experience,
+  and therefore reliability&hellip; mistaking quantity for quality is
+  a common and fraught error, and I&rsquo;m quilty of it here.)  Then,
+  for each scotch I count up the number of words in different note
+  categories like the following:
   </p>
 
   <p>
@@ -155,9 +162,11 @@
   You might use this to, e.g., take a scotch you know you like, and
   then find other scotches from the same group.  Unfortunately, the
   meaning of these groups isn&rsquo;t especially illuminating, at
-  least not to me.  So I&rsquo;ll try to get the computer to do more
-  of the interpretation for me&hellip; a good choice for this scenario
-  is the <i>principal component analysis</i>.
+  least not to me.  And I&rsquo;m a bit skeptical of this analysis,
+  since traits which I&rsquo;d expect to go together (such
+  as <i>wine</i> and <i>sherry</i> or <i>peat</i> and <i>smoke</i>)
+  seem uncorrelated.  We can better explore these correlations using
+  a <i>principal component analysis</i>.
   </p>
 
 </div> <!-- end section 1 -->
@@ -173,19 +182,25 @@
 
   <p>
   Here is a scatter plot showing the various principal components for
-  each scotch, colored by the region of origin.  You can see that the
-  principal components 1 and 2 separate the regions quite well, with
-  the smoky Islay scotches in one bunch toward the lower-left and the
-  lighter Speyside scotches all on the other side.  In terms
+  each scotch, colored by the region of origin.  If you take a look at
+  the middle plot in the top row, you can see that the principal
+  components 1 and 2 separate the scotch-producing regions quite well,
+  with the smoky Islay scotches in one bunch toward the lower-left and
+  the lighter Speyside scotches fanning out across the other side.
+  The histograms along the diagonal show that Islay and Island
+  scotches are similar, typically having negative values of PC1 and
+  PC2, while the Highland and Speyside scotches are fairly similar and
+  skew toward more positive values of PC1 and PC2.  In terms
   of <i>interpretation</i>, neither PC1 or PC2 seem likely to be
   all-that helpful, but a line cutting across the diagonal of this
   plot seems promising!
   </p>
 
   <p>
-  You can also see that the third principal component adds essentially
-  no distinguishing power, at least for traits which correlate with
-  the scotch&rsquo;s region of origin.
+  If you look in the third column, you can also see that the third
+  principal component adds essentially no distinguishing power, at
+  least for traits which correlate with the scotch&rsquo;s region of
+  origin.
   </p>
 
   <p>
@@ -195,7 +210,9 @@
   <p>
   We can also see how these principal components segregate the
   different Kmeans clusters.  Again, PC1 and PC2 do a reasonably good
-  job of segregating the different clusters.
+  job of segregating the different clusters &mdash; despite my earlier
+  skepticism, it seems that there may be some useful information in
+  these clusters after all!
   </p>
 
   <p>
@@ -204,7 +221,7 @@
 
 
   <div id="pca-table">
-  <h3>Here are the principal components:</h3>
+  <h3>Interpreting the principal components:</h3>
 
   <p>
   Great, so there exists <i>some</i> set of characteristics which
@@ -272,6 +289,7 @@
     held sherry or wine) vs. those aged in casks made from American
     oak (which is comparatively high in vanillin and other flavor
     molecules found in coconut, stonefruit, and cloves).
+    Interestingly, artificial vanilla is made from American oak.
     </p>
 
     <p>
@@ -291,6 +309,7 @@
     <h3>Here are my &ldquo;modified&rdquo; principal components:</h3>
 
     <p>
+      PC1 = 
         0.74 &times; &lsquo;sherry&rsquo;
       + 0.10 &times; &lsquo;raisin&rsquo;
       + 0.07 &times; &lsquo;berry&rsquo;
@@ -300,12 +319,97 @@
     </p>
 
     <p>
+      PC2 =
         0.64 &times; &lsquo;peat&rsquo;
       + 0.41 &times; &lsquo;smoke&rsquo;
       - 0.27 &times; &lsquo;apple&rsquo;
       - 0.28 &times; &lsquo;honey&rsquo;
       - 0.28 &times; &lsquo;heather&rsquo;
     </p>
+
+    <p>
+    Where each of the terms above represent tallies of the following
+    words:
+    </p>
+
+    <p>
+    <table>
+      <tr valign="top">
+        <th align="left">sherry</th>
+        <td>sherried, sherry</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">raisin</th>
+        <td>grape, grapes, grapey, sultanas, sultana, raisin, raisins,
+        date, dates, fig, figgy, figs, prune, prunes</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">berry</th>
+        <td>berries, berry, blackberries, blackberry, blueberries,
+        blueberry, raspberries, raspberry, strawberries, strawberry,
+        cherries, cherry, currant, currants, gooseberries, jam, jelly,
+        juice, juicy, pomegranate, rhubarb, cranberries, cranberry,
+        pie</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">spice</th>
+        <td>christmas, spice, spiced, spices, spicier, spiciest,
+        spiciness, spicy, cardamom, cardamon, ginger, gingerbread,
+        gingery, allspice, cinnamon, clove, cloves, nutmeg, mace,
+        strudel, carrot, carrots, cola</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">vanilla</th>
+        <td>vanilla</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">caramel</th>
+        <td>caramel, caramelised, caramels, butterscotch</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">peat</th>
+        <td>peat, peated, peatiness, peaty, matches, sulfur, sulphur,
+        sulphury, bog, boggy</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">smoke</th>
+        <td>pipe, pipes, bonfire, incense, scorched, burn, burned,
+        burning, burns, burnt, campfire, charred, charcoal, cigar,
+        cigarettes, cigars, coal, embers, fire, fires, smoke, smoked,
+        smokey, smokier, smokiness, smoky, smoldering, smouldering,
+        acrid, soot, sooty, tobacco, ash, ashy, barbecue, barbeque,
+        bbq, grill, grilled, mesquite, roast, roasted</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">apple</th>
+        <td>apple, apples, pear, pears, manzanilla, cider, crisp</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">honey</th>
+        <td>honey, honeyed, honeysuckle, baklava</td>
+      </tr>
+
+      <tr valign="top">
+        <th align="left">heather</th>
+        <td>heather, heathery</td>
+      </tr>
+    </table>
+    </p>
+
+    <p>
+    (If nothing else, this gives a sense of the colorful language in
+    some of the reviews!)
+    </p>
+
   </div>
 
 
@@ -318,6 +422,20 @@
   <p>
   Finally, here's the plot, colored by the Kmeans cluster.  Mouse
   over to see the scotch name, price, and average rating.
+  </p>
+
+  <p>
+  This is of course only a first pass at the data, and it only
+  explains about half of the variation among scotches.  Differences on
+  top of this seem to be much more nuanced, however: for example, a
+  smoky scotch can be woody and intensely smoky like a campfire, it
+  can have a sweetness that people associate with barbeque, or it can
+  have an herbal quality associated with incense or tobacco;
+  alternatively, if blended poorly, it can be described as ash or
+  cigarette smoke.  All of these are treated as equally <i>smoky</i>
+  in my map; nonetheless, I think this gives a good sense of what
+  scotches are out there, and where you might be interested in
+  exploring&hellip;
   </p>
     
   <!-- autoloading script for the plot -->
